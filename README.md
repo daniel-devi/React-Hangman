@@ -16,7 +16,7 @@ A fun and interactive Hangman game built with React (Typescript). Players can gu
 
 ## Tech Stack
 
-**Client:** React-Typescript, CSS Material_UI
+**Client:** `React-Typescript`, `CSS`, `Material_UI`, `Material_Icon`
 
 ## Features
 
