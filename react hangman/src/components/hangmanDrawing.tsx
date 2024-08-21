@@ -1,3 +1,8 @@
+// Import necessary components from Material-UI
+import { Box } from "@mui/material"
+import { useTheme } from "@mui/material"
+
+// Define the HEAD component of the hangman
 const HEAD = (
   <div
     style={{
@@ -12,6 +17,7 @@ const HEAD = (
   />
 )
 
+// Define the BODY component of the hangman
 const BODY = (
   <div
     style={{
@@ -25,6 +31,7 @@ const BODY = (
   />
 )
 
+// Define the RIGHT_ARM component of the hangman
 const RIGHT_ARM = (
   <div
     style={{
@@ -40,6 +47,7 @@ const RIGHT_ARM = (
   />
 )
 
+// Define the LEFT_ARM component of the hangman
 const LEFT_ARM = (
   <div
     style={{
@@ -55,6 +63,7 @@ const LEFT_ARM = (
   />
 )
 
+// Define the RIGHT_LEG component of the hangman
 const RIGHT_LEG = (
   <div
     style={{
@@ -70,6 +79,7 @@ const RIGHT_LEG = (
   />
 )
 
+// Define the LEFT_LEG component of the hangman
 const LEFT_LEG = (
   <div
     style={{
@@ -85,16 +95,22 @@ const LEFT_LEG = (
   />
 )
 
+// Array containing all body parts of the hangman
 const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
 
+// Define the props type for HangmanDrawing component
 type HangmanDrawingProps = {
   numberOfGuesses: number
 }
 
+// HangmanDrawing component
 export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
+  const theme = useTheme()
   return (
-    <div style={{ position: "relative" }}>
+    <Box sx={{ position: "relative", color: theme.palette.text.primary }}>
+      {/* Render body parts based on the number of guesses */}
       {BODY_PARTS.slice(0, numberOfGuesses)}
+      {/* Render the vertical part of the gallows */}
       <div
         style={{
           height: "50px",
@@ -105,6 +121,7 @@ export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
           right: 0,
         }}
       />
+      {/* Render the horizontal part of the gallows */}
       <div
         style={{
           height: "10px",
@@ -113,6 +130,7 @@ export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
           marginLeft: "120px",
         }}
       />
+      {/* Render the main vertical pole of the gallows */}
       <div
         style={{
           height: "400px",
@@ -121,7 +139,8 @@ export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
           marginLeft: "120px",
         }}
       />
+      {/* Render the base of the gallows */}
       <div style={{ height: "10px", width: "250px", background: "black" }} />
-    </div>
+    </Box>
   )
 }
