@@ -38,12 +38,6 @@ Clone the project
   git clone https://github.com/daniel-devi/React-Hangman
 ```
 
-Go to the project directory
-
-```bash
-  cd React_hangman
-```
-
 Install dependencies
 
 ```bash
